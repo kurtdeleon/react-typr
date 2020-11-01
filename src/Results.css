@@ -69,7 +69,7 @@
 
 #results > #stats > div > span:nth-child(1) {
   font-weight: bold;
-  opacity: 75%;
+  opacity: 0.75;
 }
 
 #results > #stats > div > span:nth-child(2) {
