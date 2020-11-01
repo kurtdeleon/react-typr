@@ -1,0 +1,119 @@
+/* Parent Component */
+#results {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 1);
+  border-radius: 4px;
+  z-index: 2;
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  transition: 0.7s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+/* Animation for hiding/showing results page */
+#results.hide {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+
+#results.show {
+  transform: translateY(0);
+}
+
+#results > div {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 1st Column: WPM and Percentile */
+#results > #wpm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#results > #wpm > span:nth-child(1) {
+  font-size: 35px;
+  font-weight: bold;
+}
+#results > #wpm > span:nth-child(2) {
+  font-size: 14px;
+}
+
+/* 2nd Column: Additional Stats */
+#results > #stats {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: stretch;
+  border-right: 1px solid rgba(40, 44, 52, 0.2);
+  border-left: 1px solid rgba(40, 44, 52, 0.2);
+  padding: 0 25px;
+}
+#results > #stats > div {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 14px;
+}
+
+#results > #stats > div > span:nth-child(1) {
+  font-weight: bold;
+  opacity: 75%;
+}
+
+#results > #stats > div > span:nth-child(2) {
+  margin-left: auto;
+  text-align: right;
+}
+
+#keystrokes-data > span:nth-child(1) {
+  color: rgb(80, 180, 80);
+}
+
+#keystrokes-data > span:nth-child(2) {
+  color: rgb(255, 70, 70);
+}
+
+#keystrokes-data > span:nth-child(3) {
+  color: rgb(255, 140, 0);
+}
+
+/* 3rd Column: Credits and Information */
+#results > #info {
+  flex: 1.2;
+  padding: 0 15px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#results > #info > span:nth-child(1) {
+  margin-bottom: 14px;
+}
+
+#results > #info > span > a:link,
+#results > #info > span > a:visited {
+  font-weight: bold;
+  color: #282c34;
+  text-decoration: none;
+}
+
+#results > #info > span > a:hover {
+  background-color: #282c34;
+  color: white;
+  text-decoration: none;
+}

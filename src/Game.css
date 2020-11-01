@@ -1,0 +1,104 @@
+/* Parent of #main-container and #input-container */
+#game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  height: 100%;
+  min-width: 55%;
+}
+
+/* Parent of #words-container and .results screen */
+#main-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+/* Word containers and spans */
+#words-container > .words {
+  font-family: "Times New Roman";
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#words-container > .words:nth-child(1),
+#words-container > .words:nth-child(3) {
+  opacity: 15%;
+}
+
+#words-container > .words:nth-child(2) {
+  margin: 10px 0;
+}
+
+/* Visual indicators for typos, correct/wrong answers, 
+  and currently selected words */
+#words-container > .words > span {
+  padding: 4px 8px;
+  font-size: 30px;
+  color: #f2f2f2;
+}
+
+#words-container > .words > .selected {
+  background-color: rgba(200, 200, 200, 0.2);
+  border-radius: 2px;
+  color: white;
+}
+
+#words-container > .words > .error {
+  background-color: rgba(200, 0, 0, 0.2);
+  color: rgba(255, 255, 255, 0.75);
+}
+
+#words-container > .words > .correct {
+  color: rgba(70, 255, 70, 0.75);
+}
+#words-container > .words > .mistake {
+  color: rgba(255, 70, 70, 0.75);
+}
+
+#words-container > .words > .empty {
+  color: rgba(0, 0, 0, 0);
+  background-color: transparent;
+}
+
+/* Input Container */
+#input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  transition: 0.75s ease-in-out;
+}
+
+#input-container > input {
+  font-family: "Times New Roman";
+  font-size: x-large;
+  padding: 8px;
+  flex: 1;
+}
+
+#input-container > button {
+  padding: 4px;
+  font-size: medium;
+  margin-left: 10px;
+}
+
+#input-container > .stats {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 2px;
+  margin-left: 10px;
+  font-size: large;
+  align-self: center;
+}
+
+#input-container > .stats#wpm {
+  flex-basis: 100px;
+}
+
+#input-container > .stats#accuracy {
+  flex-basis: 180px;
+}
