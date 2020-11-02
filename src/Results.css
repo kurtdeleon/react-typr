@@ -10,7 +10,7 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  transition: 0.7s ease-in-out;
+  transition: 0.35s linear;
   overflow: hidden;
   display: flex;
   flex-direction: row;

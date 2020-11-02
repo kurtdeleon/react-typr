@@ -21,11 +21,14 @@ function App() {
     localStorage.setItem("scores", JSON.stringify(scores));
   }, [scores]);
 
-  /* Sorts by WPM first, then Accuracy */
+  /* Sorts by WPM first, then Accuracy, then correctKP */
   const sortScores = (scoreArray) => {
     const newScores = scoreArray.sort((a, b) => {
       let x = b.wpm - a.wpm;
-      return x === 0 ? b.accuracy - a.accuracy : x;
+      let y = b.accuracy - a.accuracy;
+      let z1 = b.totalKp - b.wrongKp + b.corrections;
+      let z2 = a.totalKp - a.wrongKp + a.corrections;
+      return x === 0 ? (y === 0 ? z1 - z2 : y) : x;
     });
     return newScores;
   };
@@ -40,13 +43,7 @@ function App() {
     });
 
     if (scores.length >= scoreMaxLength) {
-      const worst = scores[scores.length - 1];
-      if (
-        newS.wpm > worst.wpm ||
-        (newS.wpm === worst.wpm && newS.accuracy > worst.accuracy)
-      ) {
-        setScores(sortScores(scores.slice(0, 9).concat(newS)));
-      }
+      setScores(sortScores([...scores, newS]).slice(0, 10));
     } else {
       setScores(sortScores(scores.concat(newS)));
     }

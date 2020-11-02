@@ -278,7 +278,7 @@ function Game(props) {
           placeholder={
             !isActive
               ? showResults
-                ? "Good job! Press the restart button to try again!"
+                ? "Good job! Press the restart button to try again."
                 : "Type anything to start..."
               : ""
           }

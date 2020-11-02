@@ -69,6 +69,15 @@ function Results(props) {
           >
             10FastFingers
           </a>
+          {`. Source code `}
+          <a
+            href="https://github.com/kurtdeleon/react-typr"
+            title="GitHub - kurtdeleon/react-typr"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            here
+          </a>
           {`.`}
         </span>
         <span>
