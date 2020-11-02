@@ -72,6 +72,7 @@ function Game(props) {
 
   /* Restarts game state */
   const restartGame = useCallback(() => {
+    setWords(generateWords(2));
     setWordCount(0);
     setMistakeIdx([]);
     setTotalKp(0);
@@ -161,12 +162,11 @@ function Game(props) {
   useEffect(() => {
     if (isActive && time <= 0) {
       setActive(false);
+      setShowResults(true);
       setErrorMode(false);
       setTime(timePerRound + 1);
       inputRef.current.value = "";
-      setShowResults(true);
       submitScore();
-      setWords(generateWords(2));
     }
   }, [isActive, time, submitScore]);
 
