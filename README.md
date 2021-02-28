@@ -1,6 +1,6 @@
 # Typr - A React App for Typing Practice
 
-Typr is currently live and hosted on Heroku -- access it by going to https://react-typr.herokuapp.com/.
+Typr is currently live and hosted on Heroku -- access it by going to https://react-typr.netlify.app/.
 
 ![Screenshot of Typr working](screencap.png)
 
